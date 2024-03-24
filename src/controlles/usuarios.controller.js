@@ -4,7 +4,7 @@ const knexInstance = require("../config/db/db.js") ;
 const { logger } = require("../config/logger.js");
 
 // Get all users
-module.exports= getUsuarios = async (req, res) => {
+module.exports= async function getUsuarios(req,res) {
     try {
         // Fetch all users from the database
         const users = await knexInstance(T_USUARIOS).select("*");
@@ -22,7 +22,7 @@ module.exports= getUsuarios = async (req, res) => {
 };
 
 // Get user by ID
-module.exports= getUsuariosById = async (req, res) => {
+module.exports= async function getUsuariosById(req,res) {
     try {
         // Extract user ID from request parameters
         const id = req.params.id;
@@ -49,7 +49,7 @@ module.exports= getUsuariosById = async (req, res) => {
 };
 
 // Create a new user
-module.exports= createUsuarios = async (req, res) => {
+module.exports= async function createUsuarios(req,res){
     try {
         // Extract data from the request body
         const obj = req.body;
@@ -82,7 +82,7 @@ module.exports= createUsuarios = async (req, res) => {
 };
 
 // Update user by ID
-module.exports= updateUsuarios = async (req, res) => {
+module.exports= async function updateUsuarios(req,res) {
     try {
         // Extract user ID from request parameters
         const { id } = req.params;
@@ -119,7 +119,7 @@ module.exports= updateUsuarios = async (req, res) => {
 };
 
 // Delete user by ID
-module.exports= deleteUsuarios = async (req, res) => {
+module.exports= async function deleteUsuarios(req,res){
     try {
         // Delete user from the database by ID
         const deletedCount = await knexInstance(T_USUARIOS).delete().where("id", "=", req.params.id);

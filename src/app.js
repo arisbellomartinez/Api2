@@ -2,8 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const { PORT } = require("./config/config.js");
-const usuariosRoutes = require("./routes/usuarios.routes.js");
+const {usuariosRoutes} = require("./routes/usuarios.routes.js");
 const indexRoutes = require("./routes/index.routes.js");
 const authRoutes = require("./routes/auth.routes.js");
 const { logger } = require("./config/logger.js");

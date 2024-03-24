@@ -1,5 +1,5 @@
-import app from "../app.js";
-import request from "supertest";
+const app = require("../app.js");
+const request = require("supertest");
 
 // Define a valid JWT token for authorization
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImlhdCI6MTcwODMzNjc3MywiZXhwIjoxNzA4NDIzMTczfQ.FtI9ZQEZ7tiAxcL3KgkUv9UAWmycaz5xr1-sLTntJXA";

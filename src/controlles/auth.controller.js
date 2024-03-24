@@ -1,9 +1,9 @@
 // Import necessary modules
-import knexInstance from "../config/db/db.js";
-import bcryptjs from "bcryptjs";
-import jwt from "jsonwebtoken";
-import { SECRET_KEY, T_AUTH } from "../config/config.js";
-import { logger } from "../config/logger.js";
+const knexInstance = require("../config/db/db.js");
+const bcryptjs = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const { SECRET_KEY, T_AUTH } = require("../config/config.js");
+const { logger } = require("../config/logger.js");
 
 // Function to fetch all users from the database
 const allSing = async () => {
@@ -12,7 +12,7 @@ const allSing = async () => {
 };
 
 // Sign up route handler
-export const signUp = async (req, res) => {
+module.exports=signUp = async (req, res) => {
     try {
         let match = 0;
         const obj = req.body;
@@ -60,7 +60,7 @@ export const signUp = async (req, res) => {
 };
 
 // Sign in route handler
-export const signIn = async (req, res) => {
+module.exports=signIn = async (req, res) => {
     let matchUser = 0;
     const obj = req.body;
     const aux = await allSing();

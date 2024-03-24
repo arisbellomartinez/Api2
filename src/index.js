@@ -1,4 +1,4 @@
-const app =require("./app.js");
+const {app} =require("./app.js");
 const { PORT } =require("./config/config.js");
 const { logger } = require("./config/logger.js");
 
